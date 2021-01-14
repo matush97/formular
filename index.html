@@ -1,0 +1,82 @@
+<!DOCTYPE html > 
+<html lang="sk">
+<head> 
+    <meta charset="utf-8">
+    <title>My third webside</title>
+    <link rel="stylesheet" type="text/css" href="style.css">  
+ </head>
+<body >
+    <header class="header">
+        <h1>formular </h1>  
+    </header>
+     
+<form class="form-group"  name="Formular" id="form-user"   action="mailto:feistu01@gmail.com" method="post"  enctype="text/plain">
+
+    <div>
+            *Krstné meno <input type="text" id="km" name="firstname" placeholder="Tvoje meno" required> 
+    </div>
+
+    <div >
+            *Priezvisko <input type="text" id="priezvisko" name="lastname" placeholder="Tvoje Priezvisko" required> 
+    </div>
+
+    <div >
+        *Dátum narodenia <input id="datumnarodenia"  type="date" name="bday" required>
+    </div>
+
+    <div >
+        Vek <input type="number" name="vek" min="0" max="500"   onchange="return vypocitajVek()" >
+    </div>
+
+    
+    
+    <div class="col-75">
+        Pohlavie <select name="gender" id="gender">
+            <option  value="male"> Muž
+            <option  value="female"> Žena
+            <option  value="other"> Iné
+        </select>
+    </div>
+    
+    <div class="right" onchange="ine()">
+            <strong>Dôvod cestovania?</strong> <br>
+            <input type="checkbox" name="vyber1" value="fun"> Zábava
+            <input type="checkbox" name="vyber2" value="travel"> Štúdium
+            <input type="checkbox" name="vyber3" value="culture" checked> Kultúra
+            <input type="checkbox" name="vyber4" id="checkbox4"  value="other" checked> Iné
+    </div>
+
+    <div class="left"  style="display: none;">
+        <label for="checkbox4" >Špecifikuj iné?</label>
+        <textarea  name="vyber4" placeholder="Doplň svoju myšlienku..." ></textarea>
+    </div>
+    
+
+    <div class="oblast">
+        <strong>Vyber si  oblasť </strong>    
+            <select id="moznostA" name="moznost1" onchange="prirad (this.id, 'moznostB')" required>
+                <option value="">Vyber niečo</option>
+                <option value="sever">Severná Európa</option>
+                <option value="stred">Stredná Európa </option>
+                <option value="juh">Južná Európa</option>
+            </select>
+        <select id="moznostB" name="moznost2" onchange="prirad2 (this.id, 'moznostC')"></select>
+        <select id="moznostC" name="moznost3"></select> 
+    </div>
+
+    
+    
+    *Váš mail: <input id="mail" name="mail_odosielatela" size="20"   pattern="[A-Za-z0-9._-]{3,}@[a-z.]+.[a-z]{2,4}" placeholder="e-mail" required>  <br>
+    Telefóne číslo: <input id="cellphone" name="cellphone" size="20" placeholder="09 ** *** ***"><br>
+    <textarea name="body" rows="4" cols="30" placeholder="Sem napíšte poznámku..."></textarea ><br>
+        * povinne pole <br>
+        <input type="submit" value="odoslať">
+</form>
+
+<footer >
+       &copy; Matúš Hudák 2019
+</footer>
+
+<script type= "text/javascript" src="script.js"> </script>
+</body>
+</html>
